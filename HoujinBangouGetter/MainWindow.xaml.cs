@@ -24,8 +24,9 @@ namespace HoujinBangouGetter
                 var result = await HojinNumber.Search(this.SearchHojinNameTextBox.Text.Split('\n'));
                 this.ResultDataGrid.ItemsSource = result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 this.ResultDataGrid.ItemsSource = null;
             }
             finally
